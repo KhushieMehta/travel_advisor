@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { CssBaseline, Grid } from '@material-ui/core';
 
@@ -34,8 +35,9 @@ const App = () => {
             setIsLoading(true);
             getWeatherData(coordinates.lat, coordinates.lng).then((data) => setWeatherData(data));
             getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
+                console.log(data)
                 setPlaces(data);
-                setFilteredPlaces([]);
+                // setFilteredPlaces([]);
                 setIsLoading(false);
             });
         }
